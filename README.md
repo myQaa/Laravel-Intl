@@ -1,26 +1,19 @@
 # Laravel Intl
 
-[![Build Status](https://travis-ci.org/Propaganistas/Laravel-Intl.svg?branch=master)](https://travis-ci.org/Propaganistas/Laravel-Intl)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Propaganistas/Laravel-Intl/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Propaganistas/Laravel-Intl/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/Propaganistas/Laravel-Intl/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Propaganistas/Laravel-Intl/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/propaganistas/laravel-intl/v/stable)](https://packagist.org/packages/propaganistas/laravel-intl)
-[![Total Downloads](https://poser.pugx.org/propaganistas/laravel-intl/downloads)](https://packagist.org/packages/propaganistas/laravel-intl)
-[![License](https://poser.pugx.org/propaganistas/laravel-intl/license)](https://packagist.org/packages/propaganistas/laravel-intl)
-
 Easy to use internationalization functions for Laravel 5 and Lumen based on various libraries for easy retrieval of
 localized values and formatting of numeric values into their localized patterns.
 
 ### Overview
 
-* [Installation](#installation)
-* [Usage](#usage)
-    * [Country](#country)
-    * [Currency](#currency)
-    * [Date](#date)
-    * [Language](#language)
-    * [Number](#number)
-* [Changing locales](#changing-locales)
-    
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Country](#country)
+  - [Currency](#currency)
+  - [Date](#date)
+  - [Language](#language)
+  - [Number](#number)
+- [Changing locales](#changing-locales)
+
 ### Installation
 
 Run the following command to install the latest version of the package
@@ -30,19 +23,21 @@ composer require propaganistas/laravel-intl
 ```
 
 #### Laravel
+
 If you don't use auto-discovery, open up your app config and add the Service Provider to the `$providers` array:
 
- ```php
+```php
 'providers' => [
-    ...
-    Propaganistas\LaravelIntl\IntlServiceProvider::class,
+   ...
+   Propaganistas\LaravelIntl\IntlServiceProvider::class,
 ],
 ```
 
 #### Lumen
+
 In `bootstrap/app.php`, register the Service Provider
 
- ```php
+```php
 $app->register(Propaganistas\LaravelIntl\IntlServiceProvider::class);
 ```
 
@@ -53,6 +48,7 @@ $app->register(Propaganistas\LaravelIntl\IntlServiceProvider::class);
 #### Country
 
 Output localized country names.
+
 ```php
 use Propaganistas\LaravelIntl\Facades\Country;
 
@@ -110,10 +106,10 @@ Just use `Illuminate\Support\Facades\Date`.
 
 Additional methods are also available to output localized common date formats. E.g. `toShortDateString()`:
 
-* Locale "en": 1/31/2018
-* Locale "nl": 31-01-2018
+- Locale "en": 1/31/2018
+- Locale "nl": 31-01-2018
 
-````php
+```php
 use Illuminate\Support\Facades\Date;
 
 $date = Date::now(); // or carbon()->now()
@@ -132,7 +128,7 @@ $date->toShortDatetimeString();
 $date->toMediumDatetimeString();
 $date->toLongDatetimeString();
 $date->toFullDatetimeString();
-````
+```
 
 #### Language
 
@@ -195,4 +191,4 @@ country()->name('US'); // United States
 ```
 
 Alternatively, you can force each component individually to the preferred locale for the remainder of the application by calling the `setLocale()` on the helper function or Facade.
-Usually you'd set this in the `boot()` method of a *ServiceProvider*.
+Usually you'd set this in the `boot()` method of a _ServiceProvider_.
