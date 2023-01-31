@@ -61,7 +61,7 @@ class Country extends Intl
     protected function data($locale)
     {
         if (! isset($this->data[$locale])) {
-            $path = base_path('vendor/umpirsky/country-list/data/'.$locale.'/country.php');
+            $path = base_path('vendor/myqaa/country-list/data/'.$locale.'/country.php');
 
             $this->data[$locale] = is_file($path) ? require $path : [];
         }
